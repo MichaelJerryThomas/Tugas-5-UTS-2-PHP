@@ -173,6 +173,8 @@ session_start();
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
+
     </style>
 </head>
 
@@ -187,11 +189,11 @@ session_start();
         <h2>To Do List</h2>
         <form action="todolist.php" method="GET">
             <input type="text" name="todo" placeholder="Tambah To Do" required>
+            <div class="button">
             <input type="submit" name="submit" value="Tambah">
+        </div>
             <div ontouchstart="">
-  <div class="button">
-    <a href="#">Mobile First</a>
-  </div>
+      
 </div>
         </form>
         <div class="list">
