@@ -114,7 +114,7 @@ session_start();
             border:3px solid black;
             padding : 10px;
         }
-        
+
         body{
         text-align:center;
         background-color:#ffcc8e;
@@ -183,7 +183,7 @@ session_start();
     <header>
         <h1>To Do List App</h1>
         <p><?php echo $_SESSION['username']; ?> - 225314027</p>
-        <img src="foto.jpg" alt="Foto Profil">
+
         <a href="logout.php">Logout</a>
     </header>
     <div class="container">
