@@ -18,6 +18,11 @@ function read_data($koneksi)
     return $list_todo;
 }
 session_start();
+
+if (!isset($_SESSION["username"])) {
+    header("Location: index.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -175,12 +180,37 @@ session_start();
         border-radius: 5px;
         }
 
+        img{
+            border-radius: 50%;
+        }
+        .info-user{
+            display:flex
+        }
 
+        .info-user h1{
+            margin-left: 3px;
+            font-size: 15px;
+            margin-top:15px;
+        }
     </style>
 </head>
 
 <body>
     <header>
+            <div class="info-user">
+                <div>
+                    <img src="img/Jerry.jpg" class="img-fluid rounded-circle" style="height: 50px; width:50px" alt="Foto Profil" >
+                </div>
+                <div>
+                    <h1 class="display-4">Michael Jerry Thomas</h1>
+                </div>
+            </div>
+       
+          <!-- <p class="lead">225314027</p> -->
+        </div>
+      </div>
+    </div>
+  </section>
         <h1>To Do List App</h1>
         <p><?php echo $_SESSION['username']; ?> - 225314027</p>
 
