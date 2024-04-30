@@ -211,7 +211,7 @@ if (!isset($_SESSION["username"])) {
       </div>
     </div>
   </section>
-        <h1>To Do List App</h1>
+        <!-- <h1>To Do List App</h1> -->
         <p><?php echo $_SESSION['username']; ?> - 225314027</p>
 
         <a href="logout.php">Logout</a>

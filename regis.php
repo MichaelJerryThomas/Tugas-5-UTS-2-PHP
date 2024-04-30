@@ -5,10 +5,9 @@
 
     if (isset($_POST['username'])) {
         $username = $_POST["username"];
-        $password = hash('sha256',$_POST["password"]);
-        $passowrd_konfirmasi = hash('sha256',$_POST["password"]);
+        $password = password_hash($_POST["password1"], PASSWORD_DEFAULT);
 
-        if ($password == $passowrd_konfirmasi) {
+        if ($password) {
             $query = "INSERT INTO users VALUES('','$username','$password')";
             $result = mysqli_query($koneksi,$query); //jika gagal maka nilainya 0 dan jika berhasil nilainya 1
             $_SESSION["username"] = $username;
@@ -19,10 +18,6 @@
        
     }
 
-  
-  
-
-   
 ?>
 <!DOCTYPE html>
 <html lang="en">

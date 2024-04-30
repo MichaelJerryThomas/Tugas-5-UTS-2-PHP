@@ -11,16 +11,37 @@
     // mengecek apakah ada data post yang dikirimkan atau tidak
     if (isset($_POST['username'])) {
         $username = $_POST["username"];
-        $password = hash('sha256',$_POST["password"]);
+        $password = $_POST["password"];
+    
         $query = "SELECT * FROM users WHERE username='$username'";
-
-        $result = mysqli_query($koneksi,$query);
-        if ($result == 1) {
-            $_SESSION["username"] = $username;
-            echo"1";
-            header("Location: todolist.php");
+    
+        $result = mysqli_query($koneksi, $query);
+    
+     
+        if ($result && mysqli_num_rows($result) > 0) {
+            
+            $row = mysqli_fetch_assoc($result);
+           
+            
+            if (password_verify($password, $row["password"])) {
+                
+                $_SESSION["username"] = $username;
+                header("Location: todolist.php");
+                exit(); 
+            } else {
+                
+                echo("password anda salah");
+                die();
+                header("Location: index.php");
+                exit(); 
+            }
+        } else {
+            // Tidak ada baris yang cocok dengan username yang diberikan
+            echo "Username tidak ditemukan";
         }
     }
+    
+    
    
 ?>
 
