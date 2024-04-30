@@ -1,36 +1,35 @@
-<?php 
-    session_start();
-    require 'config.php';
-    $koneksi = mysqli_connect("localhost", "root", "", "tugas_php");
+<?php
+session_start();
+require 'config.php';
+$koneksi = mysqli_connect("localhost", "root", "", "tugas_php");
 
-    if (isset($_POST['username'])) {
-        $username = $_POST["username"];
-        $password = password_hash($_POST["password1"], PASSWORD_DEFAULT);
+if (isset($_POST['username'])) {
+    $username = $_POST["username"];
+    $password = password_hash($_POST["password1"], PASSWORD_DEFAULT);
 
-        if ($password) {
-            $query = "INSERT INTO users VALUES('','$username','$password')";
-            $result = mysqli_query($koneksi,$query); //jika gagal maka nilainya 0 dan jika berhasil nilainya 1
-            $_SESSION["username"] = $username;
-            if ($result == 1) {
-                header("Location: todolist.php");
-            }
+    if ($password) {
+        $query = "INSERT INTO users VALUES('','$username','$password')";
+        $result = mysqli_query($koneksi, $query); //jika gagal maka nilainya 0 dan jika berhasil nilainya 1
+        $_SESSION["username"] = $username;
+        if ($result == 1) {
+            header("Location: todolist.php");
         }
-       
     }
+}
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>halaman register</title>
     <style>
-        
         * {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat',serif;
+            font-family: 'Montserrat', serif;
             box-sizing: border-box;
         }
 
@@ -53,7 +52,7 @@
 
         .wrapper h1 {
             font-size: 36px;
-            text-align: center; 
+            text-align: center;
         }
 
         .wrapper .input-box {
@@ -77,7 +76,7 @@
         .input-box input::placeholder {
             color: white;
         }
-        
+
         .wrapper .remember-forgot {
             display: flex;
             justify-content: space-between;
@@ -86,7 +85,7 @@
 
         .wrapper .remember-forgot label {
             color: white;
-            margin-left: 3px; 
+            margin-left: 3px;
         }
 
         .wrapper .remember-forgot a {
@@ -157,7 +156,7 @@
             <div class="input-box">
                 <input type="password" placeholder="Konfirmasi Password" name="password2" required>
             </div>
-      
+
 
             <button type="submit" class="btn">Register</button>
 

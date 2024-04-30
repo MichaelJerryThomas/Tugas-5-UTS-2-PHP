@@ -77,15 +77,16 @@ if (!isset($_SESSION["username"])) {
             cursor: pointer;
         }
 
-        .list{
+        .list {
             display: flex;
             justify-content: center;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            
+
         }
 
         li {
@@ -99,7 +100,7 @@ if (!isset($_SESSION["username"])) {
 
         .actions {
             margin-top: 15px;
-            padding : 10px;
+            padding: 10px;
         }
 
         .actions a {
@@ -115,103 +116,113 @@ if (!isset($_SESSION["username"])) {
             background-color: #f4f4f4;
         }
 
-        li p{
-            border:3px solid black;
-            padding : 10px;
+        li p {
+            border: 3px solid black;
+            padding: 10px;
         }
 
-        body{
-        text-align:center;
-        background-color:#ffcc8e;
+        body {
+            text-align: center;
+            background-color: #ffcc8e;
         }
 
-        .button{
-        position:relative;
-        display:inline-block;
-        margin:20px;
+        .button {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
         }
 
-        .button a{
-        color:white;
-        font-family:Helvetica, sans-serif;
-        font-weight:bold;
-        font-size:36px;
-        text-align: center;
-        text-decoration:none;
-        background-color:#FFA12B;
-        display:block;
-        position:relative;
-        padding:20px 40px;
-        
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        text-shadow: 0px 1px 0px #000;
-        filter: dropshadow(color=#000, offx=0px, offy=1px);
-        
-        -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
-        -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
-        box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
-        
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
+        .button a {
+            color: white;
+            font-family: Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 36px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #FFA12B;
+            display: block;
+            position: relative;
+            padding: 20px 40px;
+
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            text-shadow: 0px 1px 0px #000;
+            filter: dropshadow(color=#000, offx=0px, offy=1px);
+
+            -webkit-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+            -moz-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+            box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
         }
 
-        .button a:active{
-        top:10px;
-        background-color:#F78900;
-        
-        -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
-        -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
-        box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+        .button a:active {
+            top: 10px;
+            background-color: #F78900;
+
+            -webkit-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+            -moz-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+            box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
         }
 
-        .button:after{
-        content:"";
-        height:100%;
-        width:100%;
-        padding:4px;
-        position: absolute;
-        bottom:-15px;
-        left:-4px;
-        z-index:-1;
-        background-color:#2B1800;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
+        .button:after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            padding: 4px;
+            position: absolute;
+            bottom: -15px;
+            left: -4px;
+            z-index: -1;
+            background-color: #2B1800;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
         }
 
-        img{
+        img {
             border-radius: 50%;
         }
-        .info-user{
-            display:flex
+
+        .info-user {
+            display: flex
         }
 
-        .info-user h1{
+        .info-user h1 {
             margin-left: 3px;
             font-size: 15px;
-            margin-top:15px;
+            margin-top: 15px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
     <header>
-            <div class="info-user">
-                <div>
-                    <img src="img/Jerry.jpg" class="img-fluid rounded-circle" style="height: 50px; width:50px" alt="Foto Profil" >
-                </div>
-                <div>
-                    <h1 class="display-4">Michael Jerry Thomas</h1>
-                </div>
+        <div class="info-user">
+            <div>
+                <img src="img/Jerry.jpg" class="img-fluid rounded-circle" style="height: 50px; width:50px" alt="Foto Profil">
             </div>
-       
-          <!-- <p class="lead">225314027</p> -->
+            <div>
+                <h1 class="display-4">Michael Jerry Thomas</h1>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-        <!-- <h1>To Do List App</h1> -->
+
+        </div>
+        </div>
+        </div>
+        </section>
         <p><?php echo $_SESSION['username']; ?> - 225314027</p>
 
         <a href="logout.php">Logout</a>
@@ -221,40 +232,41 @@ if (!isset($_SESSION["username"])) {
         <form action="todolist.php" method="GET">
             <input type="text" name="todo" placeholder="Tambah To Do" required>
             <div class="button">
-            <input type="submit" name="submit" value="Tambah">
-        </div>
+                <input type="submit" name="submit" value="Tambah">
+            </div>
             <div ontouchstart="">
-      
-</div>
+
+            </div>
         </form>
         <div class="list">
-        <ul>
-            <?php $list_todo_data = read_data($koneksi); ?>
-            <?php
+            <ul>
+                <?php $list_todo_data = read_data($koneksi); ?>
+                <?php
                 if (empty($list_todo_data)) {
-                    echo"<h1>Belum Ada List To Do</h1>";
-                }else{
-            foreach ($list_todo_data as $todo_data) { ?>
-                <li>
-                    <p>
-                        <?php
-                        if ($todo_data["selesai"] == 1) { ?>
-                            <strike><?php echo $todo_data["todo"] ?></strike>
-                        <?php } else {
-                            echo $todo_data["todo"];
-                        }
-                        ?>
-                    </p>
-                    <div class="actions">
-                        <a href="selesai.php?id=<?php echo $todo_data["id"] ?>">Selesai</a>
-                        <a href="hapus.php?id=<?php echo $todo_data["id"]?>">Hapus</a>
-                    </div>
-                </li>
-            <?php } } ?>
-        </ul>
+                    echo "<h1>Belum Ada List To Do</h1>";
+                } else {
+                    foreach ($list_todo_data as $todo_data) { ?>
+                        <li>
+                            <p>
+                                <?php
+                                if ($todo_data["selesai"] == 1) { ?>
+                                    <strike><?php echo $todo_data["todo"] ?></strike>
+                                <?php } else {
+                                    echo $todo_data["todo"];
+                                }
+                                ?>
+                            </p>
+                            <div class="actions">
+                                <a href="selesai.php?id=<?php echo $todo_data["id"] ?>">Selesai</a>
+                                <a href="hapus.php?id=<?php echo $todo_data["id"] ?>">Hapus</a>
+                            </div>
+                        </li>
+                <?php }
+                } ?>
+            </ul>
 
         </div>
-      
+
     </div>
 </body>
 

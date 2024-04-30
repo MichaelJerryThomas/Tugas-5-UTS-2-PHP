@@ -1,63 +1,63 @@
 <?php
-    session_start();
-    // bila sudah login lalu memaksa akses halaman ini maka akan dilempar ke halaman sebelumnya
-    if(isset($_SESSION["username"])) {
-        header("Location: todolist.php");
-    };
+session_start();
+// bila sudah login lalu memaksa akses halaman ini maka akan dilempar ke halaman sebelumnya
+if (isset($_SESSION["username"])) {
+    header("Location: todolist.php");
+};
 
-    // Koneksi ke database
-    $koneksi = mysqli_connect("localhost", "root", "", "tugas_php");
+// Koneksi ke database
+$koneksi = mysqli_connect("localhost", "root", "", "tugas_php");
 
-    // mengecek apakah ada data post yang dikirimkan atau tidak
-    if (isset($_POST['username'])) {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-    
-        $query = "SELECT * FROM users WHERE username='$username'";
-    
-        $result = mysqli_query($koneksi, $query);
-    
-     
-        if ($result && mysqli_num_rows($result) > 0) {
-            
-            $row = mysqli_fetch_assoc($result);
-           
-            
-            if (password_verify($password, $row["password"])) {
-                
-                $_SESSION["username"] = $username;
-                header("Location: todolist.php");
-                exit(); 
-            } else {
-                
-                echo("password anda salah");
-                die();
-                header("Location: index.php");
-                exit(); 
-            }
+// mengecek apakah ada data post yang dikirimkan atau tidak
+if (isset($_POST['username'])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $query = "SELECT * FROM users WHERE username='$username'";
+
+    $result = mysqli_query($koneksi, $query);
+
+
+    if ($result && mysqli_num_rows($result) > 0) {
+
+        $row = mysqli_fetch_assoc($result);
+
+
+        if (password_verify($password, $row["password"])) {
+
+            $_SESSION["username"] = $username;
+            header("Location: todolist.php");
+            exit();
         } else {
-            // Tidak ada baris yang cocok dengan username yang diberikan
-            echo "Username tidak ditemukan";
+
+            echo ("password anda salah");
+            die();
+            header("Location: index.php");
+            exit();
         }
+    } else {
+        // Tidak ada baris yang cocok dengan username yang diberikan
+        echo "Username tidak ditemukan";
     }
-    
-    
-   
+}
+
+
+
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>halaman login</title>
     <style>
-        
         * {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat',serif;
+            font-family: 'Montserrat', serif;
             box-sizing: border-box;
         }
 
@@ -80,7 +80,7 @@
 
         .wrapper h1 {
             font-size: 36px;
-            text-align: center; 
+            text-align: center;
         }
 
         .wrapper .input-box {
@@ -104,7 +104,7 @@
         .input-box input::placeholder {
             color: white;
         }
-        
+
         .wrapper .remember-forgot {
             display: flex;
             justify-content: space-between;
@@ -113,7 +113,7 @@
 
         .wrapper .remember-forgot label {
             color: white;
-            margin-left: 3px; 
+            margin-left: 3px;
         }
 
         .wrapper .remember-forgot a {
@@ -181,7 +181,7 @@
                 <input type="password" placeholder="Password" name="password" required>
             </div>
 
-      
+
 
             <button type="submit" class="btn">Login</button>
 
