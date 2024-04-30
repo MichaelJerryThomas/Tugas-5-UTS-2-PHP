@@ -1,0 +1,6 @@
+CREATE TABLE `todolist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `todo` varchar(255) NOT NULL,
+  `selesai` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
